@@ -7,7 +7,7 @@ import getEncodedPublicId from '../utils/cloudinaryHelpers.js';
 export const getAllHeroes = async (req, res) => {
     try {
         const page = parseInt(req.query.page) || 1;
-        const limit = 5; // fixed to 5 heroes per page
+        const limit = 5;
 
         const total = await Superhero.countDocuments();
         const heroes = await Superhero.find()
@@ -151,6 +151,11 @@ export const deleteHeroById = async (req, res) => {
         if (!deletedHero) {
             return res.status(404).json({ message: "Hero not found" });
         }
+
+        const images = deletedHero.images
+
+        await Promise.all(images.map(image => cloudinary.uploader.destroy(decodeURIComponent(getEncodedPublicId(image)))))
+
         res.status(200).json({ message: "Hero deleted", hero: deletedHero });
     } catch (error) {
         console.error("Error updating hero:", error);
