@@ -34,8 +34,8 @@ export const createHero = async (req, res) => {
 
     const uploadedImages = req.files || [];
 
-    if (uploadedImages.length === 0 && urlImages.length === 0) {
-        return res.status(400).json({ message: 'At least one image must be uploaded or provided as a URL' });
+    if (uploadedImages.length === 0) {
+        return res.status(400).json({ message: 'At least one image must be uploaded' });
     }
     try {
         const { nickname, real_name, origin_description, superpowers, catch_phrase } = req.body;
