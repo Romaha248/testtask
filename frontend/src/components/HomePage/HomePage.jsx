@@ -13,14 +13,19 @@ function HomePage() {
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    getAllHeroes(page).then((response) => {
-      setHeroes(response.data.heroes);
-      setTotalPages(response.data.totalPages);
+    const fetchHeroes = async () => {
+      try {
+        const response = await getAllHeroes(page);
+        setHeroes(response.data.heroes);
+        setTotalPages(response.data.totalPages);
 
-      setSearchParams({ page });
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+        setSearchParams({ page });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } catch (err) {
+        console.error("Failed to fetch heroes:", err);
+      }
+    };
+    fetchHeroes();
   }, [page, setSearchParams]);
 
   return (
@@ -34,7 +39,7 @@ function HomePage() {
       </div>
       <div className="flex gap-4 my-6">
         {Array.from({ length: totalPages }, (_, i) => (
-          <Page key={i + 1} pageNum={i + 1} setPage={setPage} currPage={page} />
+          <Page key={i + 1} pageNum={i + 1} setPage={setPage} />
         ))}
       </div>
     </div>

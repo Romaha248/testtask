@@ -20,7 +20,7 @@ function HeroCard({ hero }) {
         <Link
           to={`/${hero._id}`}
           className="flex items-center justify-center w-20 h-8 rounded-2xl 
-             bg-blue-700 hover:bg-blue-600 
+             bg-blue-700 hover:bg-blue-800 
              text-white font-medium transition-colors"
         >
           Details
