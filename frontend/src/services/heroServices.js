@@ -24,8 +24,7 @@ export function createHero(heroData, images) {
     });
 }
 
-
-export function updateHero(id, heroData) {
+export function updateHeroById(id, heroData) {
     return apiClient.patch(`/heroes/${id}`, heroData, {
         headers: { "Content-Type": "multipart/form-data" },
     })

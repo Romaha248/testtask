@@ -177,11 +177,9 @@ function CreateHero() {
             htmlFor="file-upload"
             className="cursor-pointer px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
           >
-            📂 Choose Files
+            📂 Add New Images
           </label>
-          {errors.images && (
-            <p className="text-red-400 text-sm">{errors.images}</p>
-          )}
+          {errors.images && <p className="text-red-500">{errors.images}</p>}
         </div>
 
         {images.length > 0 && (
