@@ -1,6 +1,7 @@
 import axios from "axios";
-import config from "../config.json"
+
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 export default axios.create({
-    baseURL: `${config.backendURL}`
+    baseURL: `${baseUrl}/api`
 })

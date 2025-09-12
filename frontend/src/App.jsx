@@ -1,13 +1,19 @@
 // import { useState } from 'react'
-import './App.css'
-import HomePage from './components/HomePage/HomePage'
+import "./App.css";
+import HomePage from "./components/HomePage/HomePage";
+import Navbar from "./components/Navbar/Navbar";
+import AllRoutes from "./components/Routes/AllRoutes";
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <HomePage></HomePage>
-  )
+    <>
+      <Navbar />
+      {/* <HomePage></HomePage> */}
+      <AllRoutes />
+    </>
+  );
 }
 
-export default App
+export default App;

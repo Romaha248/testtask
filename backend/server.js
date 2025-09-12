@@ -20,7 +20,7 @@ connectDB();
 //     res.send('Hello from Express with ES Modules 🚀');
 // });
 
-app.use("/heroes", heroesRoutes);
+app.use("/api/heroes", heroesRoutes);
 
 // Start server
 app.listen(PORT, () => {
