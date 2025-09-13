@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "testtask",
   "private": true,
   "workspaces": [
     "frontend",
