@@ -1,4 +1,10 @@
 {
+  "name": "my-app",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
     "dev": "concurrently \"npm run devStart --prefix backend\" \"npm run dev --prefix frontend\""
   },

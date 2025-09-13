@@ -10,8 +10,8 @@ The backend provides a REST API for managing heroes, and the frontend consumes i
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/Romaha248/testtask.git
+cd testtask
 ```
 
 ### 2. Install dependencies
@@ -82,26 +82,9 @@ Now you should have:
 
 If you want to run **frontend + backend in one command** from the root directory:
 
-1. Install [concurrently](https://www.npmjs.com/package/concurrently) in root:
-
-   ```bash
-   npm install --save-dev concurrently
-   ```
-
-2. Add this to the **root `package.json`**:
-
-   ```json
-   {
-     "scripts": {
-       "dev": "concurrently \"npm run devStart --prefix backend\" \"npm run dev --prefix frontend\""
-     }
-   }
-   ```
-
-3. Run everything:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 ---
 
